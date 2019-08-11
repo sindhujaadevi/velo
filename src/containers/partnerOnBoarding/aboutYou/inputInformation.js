@@ -55,6 +55,7 @@ class InputInformation extends React.Component {
     }
   }
   handleClick = popUpContent => {
+    debugger;
     this.setState({ alertOpen: !this.state.alertOpen, popUpContent })
   }
   submitForm = () => {
