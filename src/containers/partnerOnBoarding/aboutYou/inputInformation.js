@@ -55,6 +55,7 @@ class InputInformation extends React.Component {
     }
   }
   handleClick = popUpContent => {
+    debugger;
     this.setState({ alertOpen: !this.state.alertOpen, popUpContent })
   }
   submitForm = () => {
@@ -67,7 +68,7 @@ class InputInformation extends React.Component {
     } else if (componentName === 'address') {
       componentName = 'accountUsage'
       dataToRender = accountUsageData
-    } else if (componentName === 'accountUsage') {
+    } else if (componentName === 'accountUsage' || componentName === 'w8ben') {
       componentName = 'w8ben'
       const popUpContent = {
         title: 'Important Reminder',
@@ -76,7 +77,7 @@ class InputInformation extends React.Component {
         message: `<p>1. Maintenance fee of $10 will be charged per month statement cycle if you do not maintain a minimum average monthly balance of $2,500 in your Velo Premier Checking account during the statement cycle.</p>
         <p>2. Accounts that are not funded within 90 days, or that at any time maintain a $0 balance for 90 days or more, will be automatically closed.</p>`,
         buttonLabelId: 'gotIt',
-        buttonLabel:'Got It',
+        buttonLabel: 'Got It',
       }
       this.setState({ alertOpen: true, popUpContent })
     }
