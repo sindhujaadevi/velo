@@ -1,0 +1,12 @@
+.footer-top {
+  text-align: center;
+  margin: 20px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.footer-links > a {
+  text-decoration: underline;
+  color: white;
+  letter-spacing: 0px;
+}

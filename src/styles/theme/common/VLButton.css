@@ -1,0 +1,25 @@
+.button {
+  width: 100%;
+  text-transform: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+}
+.button-primary {
+  background-color: #117bbd;
+  height: 37px;
+  color: #ffffff;
+}
+
+.button-secondary {
+  background-color: #00ddf4;
+  height: 48px;
+  color: #0d3b60;
+}

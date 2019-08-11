@@ -1,0 +1,23 @@
+.field-content {
+  padding: 13px;
+  border-bottom: 1px solid white;
+}
+
+.field-data {
+  height: 60px;
+}
+
+.field-heading {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.field-value {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.form-w8ben{
+    font-size: 16px;
+    line-height: 22px;
+}

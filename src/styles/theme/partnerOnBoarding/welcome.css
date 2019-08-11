@@ -1,0 +1,29 @@
+.welcome-text {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: center;
+  color: #ebecf1;
+  padding-top: 10px;
+}
+
+.info{
+    padding: 20px;
+    line-height: 22px;
+    color: #ebecf1;
+}
+
+.info-header{
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+.info-content{
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 5px;
+}
+
+.button-margin{
+    margin: 48px 25px;
+}

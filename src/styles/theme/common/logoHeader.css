@@ -1,0 +1,10 @@
+.logo-header{
+  text-align: center;
+  margin: 30px;
+}
+
+.logo-img {
+  width: 140px;
+  height: 67px;
+  object-fit: contain;
+}
