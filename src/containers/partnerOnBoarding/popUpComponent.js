@@ -14,9 +14,9 @@ function PopUpComponent(props) {
   const [open, setOpen] = useState(true);
   const {popUpContent: {title, titleId, messageId, message, buttonLabel, buttonLabelId}, componentName } ={...props};
   const classes = UseStyles();
-  console.log("TCL: PopUpComponent -> title, titleId, messageId, message}, componentName", title, titleId, messageId, message, componentName)
 
-  const handleClick = () => {
+  const handleClick = (componentName) => {
+    setOpen(false);
     componentName === "w8ben"
       ? props.history.push("/W_8BEN")
       : props.handleClick();
@@ -26,7 +26,7 @@ function PopUpComponent(props) {
     <div>
       <Dialog
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => handleClick()}
         classes={{
           paper: classes.paper
         }}
@@ -74,7 +74,7 @@ function PopUpComponent(props) {
         >
           <VLButton
             title={[buttonLabelId,buttonLabel]}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(componentName)}
             secondary={false}
           />
         </DialogActions>
