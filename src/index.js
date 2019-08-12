@@ -7,6 +7,7 @@ import { store } from './ducks';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/common/App';
 import './styles/App.css';
+import './constants/colors';
 import { IntlProvider, addLocaleData } from "react-intl";
 import locale_en from 'react-intl/locale-data/en';
 import locale_zh from 'react-intl/locale-data/zh';
@@ -26,7 +27,7 @@ addLocaleData([...locale_en, ...locale_zh]);
 
 ReactDOM.render(
   <BrowserRouter>
-    <IntlProvider locale='zh' messages={messages['zh']}>
+    <IntlProvider locale='en' messages={messages['en']}>
       <Provider store={store}>
         <App />
       </Provider>

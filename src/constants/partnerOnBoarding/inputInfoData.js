@@ -76,5 +76,14 @@ export default {
     FamilySupport: 'Family Support',
     PersonalSavings: 'Personal Savings',
     LegalSettlement: 'Legal Settlement'
+  },
+  wiresLimit: {
+    "NoPlan": "No Plan",
+    "ZeroToThreeThousand": "< $3,000",
+    "ThreeThousandOneToTenThousand": "$3,001 - $10,000",
+    "TenThousandOneToTwentyFiveThousand": "$10,001 - $25,000",
+    "TwentyFiveThousandOneToFiftyThousand": "$25,001 - $50,000",
+    "FiftyThousandOneToHundredThousand": "$50,001 - $100,000",
+    "GreaterThanHundredThousand": "$100,001 and above"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import confirmConstant from '../../constants/partnerOnBoarding/confirmImport'
+import inputInfoData from '../../constants/partnerOnBoarding/inputInfoData'
 import {
   RenderTextField,
   RenderSelectField
@@ -55,13 +55,13 @@ export default {
       Gender: {
         label: 'Gender',
         renderComponent: RenderSelectField,
-        options: confirmConstant.gender
+        options: inputInfoData.gender
       },
 
       MaritalStatus: {
         label: 'Marital Status',
         renderComponent: RenderSelectField,
-        options: confirmConstant.maritalStatus
+        options: inputInfoData.maritalStatus
       },
 
       CountryResidentCode: {
@@ -84,13 +84,13 @@ export default {
       EmploymentOrSchool: {
         label: 'Employment Status',
         renderComponent: RenderSelectField,
-        options: confirmConstant.employmentStatus
+        options: inputInfoData.employmentStatus
       },
 
       Occupation: {
         label: 'Occupation',
         renderComponent: RenderSelectField,
-        options: confirmConstant.occupation
+        options: inputInfoData.occupation
       },
 
       YearEmployed: {
@@ -114,13 +114,13 @@ export default {
       AnnualIncome: {
         label: 'Approximate Annual Net Income',
         renderComponent: RenderSelectField,
-        options: confirmConstant.annualIncome
+        options: inputInfoData.annualIncome
       },
 
       TotalNetWorth: {
         label: 'Approximate Total Net Worth',
         renderComponent: RenderSelectField,
-        options: confirmConstant.totalNetWorth
+        options: inputInfoData.totalNetWorth
       }
     },
 
@@ -175,25 +175,27 @@ export default {
       PurposeOfAccount: {
         label: 'What is the primary purpose for this account？',
         renderComponent: RenderSelectField,
-        options: confirmConstant.purposeOfWealth
+        options: inputInfoData.purposeOfWealth
       },
 
       SourceOfWealth: {
         label: 'What is your primary source of income?',
         renderComponent: RenderSelectField,
-        options: confirmConstant.sourceOfWealth
+        options: inputInfoData.sourceOfWealth
       },
 
       IncomingWiresLimit: {
         label:
           'How much do you expect to receive monthly in this account via international wire transfers？',
-        renderComponent: RenderTextField
+        renderComponent: RenderSelectField,
+        options: inputInfoData.wiresLimit
       },
 
       OutgoingWiresLimit: {
         label:
           'How much do you expect to send monthly in this account via international wire transfers?',
-        renderComponent: RenderTextField
+        renderComponent: RenderSelectField,
+        options: inputInfoData.wiresLimit
       }
     }
   }

@@ -10,9 +10,8 @@ import VLButton from "../../baseComponents/VLButton";
 import UseStyles from "../../styles/theme/partnerOnBoarding/popUpComponentCSS";
 
 function PopUpComponent(props) {
-  console.log("TCL: PopUpComponent -> props", props)
   const [open, setOpen] = useState(true);
-  const {popUpContent: {title, titleId, messageId, message, buttonLabel, buttonLabelId}, componentName } ={...props};
+  const { popUpContent: { title, titleId, messageId, message, buttonLabel, buttonLabelId }, componentName } = { ...props };
   const classes = UseStyles();
 
   const handleClick = (componentName) => {
@@ -21,6 +20,7 @@ function PopUpComponent(props) {
       ? props.history.push("/W_8BEN")
       : props.handleClick();
   };
+  const typeOfPopUp = titleId ? 'withTitle' : 'common';
 
   return (
     <div>
@@ -28,36 +28,24 @@ function PopUpComponent(props) {
         open={open}
         onClose={() => handleClick()}
         classes={{
-          paper: classes.paper
+          paper: classes.paper,
         }}
-        style={title ? { top: "-130px" } : null}
+        style={titleId ? { top: "-130px" } : null}
       >
-        {title && (
+        {typeOfPopUp === 'withTitle' && (
           <DialogTitle
             disableTypography={true}
             classes={{
-              root: classes.dialogTitle
+              root: classes[typeOfPopUp]
             }}
           >
-            <FormattedMessage id={titleId} defaultMessage={title}/>
+            <FormattedMessage id={titleId} defaultMessage={title} />
           </DialogTitle>
         )}
         <DialogContent
-          classes={
-            title
-              ? { root: classes.dialogContent }
-              : { root: classes.simpleContent }
-          }
-          style={
-            title ? { maxHeight: "218px" } : { textAlign: "center" }
-          }
-        >
+          classes={{ root: classes[`${typeOfPopUp}Content`] }}>
           <DialogContentText
-            classes={
-              title
-                ? { root: classes.dialogContentText }
-                : { root: classes.simpleDialog }
-            }
+            classes={{ root: classes[`${typeOfPopUp}ContentText`] }}
           >
             <FormattedHTMLMessage
               id={messageId}
@@ -66,14 +54,10 @@ function PopUpComponent(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions
-          classes={
-            title
-              ? { root: classes.actionRoot }
-              : { root: classes.simpleRoot }
-          }
+          classes={{ root: classes[`${typeOfPopUp}Action`] }}
         >
           <VLButton
-            title={[buttonLabelId,buttonLabel]}
+            title={[buttonLabelId, buttonLabel]}
             onClick={() => handleClick(componentName)}
             secondary={false}
           />

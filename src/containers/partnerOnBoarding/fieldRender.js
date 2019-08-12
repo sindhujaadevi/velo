@@ -1,37 +1,22 @@
 import React from 'react'
-import { makeStyles, withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import { FormattedMessage } from 'react-intl'
+import {useStyles, ThemeRadio} from '../../styles/theme/partnerOnBoarding/fieldRenderCSS'
 
-const useStyles = makeStyles({
-  icon: {
-    fill: '#00fffc'
-  }
-})
-
-const ThemeRadio = withStyles({
-  root: {
-    color: '#00ddf4',
-    '&$checked': {
-      color: '#00ddf4'
-    }
-  }
-})(props => <Radio color='default' {...props} />)
-
-export function RenderTextField (props) {
+export function RenderTextField(props) {
   let {
     label,
     input,
     meta: { touched, invalid, error },
     ...custom
   } = { ...props }
+  const classes = useStyles()
   return (
     <TextField
       label={label}
@@ -41,13 +26,18 @@ export function RenderTextField (props) {
       {...custom}
       fullWidth
       multiline
-      InputLabelProps={{ style: { color: 'white', fontSize: '12px' } }}
+      InputLabelProps={{
+        focused: false,
+        classes: {
+          root: classes.inputLabel
+        }
+      }}
       InputProps={{ disableUnderline: true }}
     />
   )
 }
 
-export function RenderSelectField (props) {
+export function RenderSelectField(props) {
   let {
     input,
     label,
@@ -59,7 +49,11 @@ export function RenderSelectField (props) {
   const classes = useStyles()
   return (
     <FormControl error={touched && error} fullWidth>
-      <InputLabel style={{ color: 'white', fontSize: '12px' }} htmlFor={label}>
+      <InputLabel classes={{
+        root: classes.inputLabel
+      }}
+        focused={false}
+        htmlFor={label}>
         {label}
       </InputLabel>
       <Select
@@ -70,10 +64,10 @@ export function RenderSelectField (props) {
         disableUnderline
         inputProps={{
           classes: {
-            icon: classes.icon
+            icon: classes.icon,
+            root: classes.input
           }
         }}
-        style={{ fontSize: '16px', color: 'white' }}
       >
         {children}
       </Select>
@@ -82,7 +76,7 @@ export function RenderSelectField (props) {
   )
 }
 
-export function renderRadioButton ({ input, ...rest }) {
+export function renderRadioButton({ input, ...rest }) {
   return (
     <FormControl>
       <RadioGroup {...input} {...rest} row>

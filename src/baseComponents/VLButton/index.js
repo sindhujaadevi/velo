@@ -11,7 +11,7 @@ export default function VLButton({
   title
 }) {
   let controlClasses = "button";
-  controlClasses += secondary ? " button-secondary" : " button-primary";
+  controlClasses += disabled ? " button-disabled" : secondary ? " button-secondary" : " button-primary";
 
   if (submit) {
     return (

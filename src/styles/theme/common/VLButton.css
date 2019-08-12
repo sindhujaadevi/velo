@@ -23,3 +23,9 @@
   height: 48px;
   color: #0d3b60;
 }
+
+.button-disabled {
+  background-color: #ffffff;
+  height: 48px;
+  color: #0d3b60;
+}

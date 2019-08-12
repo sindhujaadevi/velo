@@ -10,25 +10,9 @@ import BackgroundInformation from './backgroundInformation'
 import PopUpComponent from '../../partnerOnBoarding/popUpComponent'
 import countryCode from '../../../constants/partnerOnBoarding/countryCode'
 import VLButton from '../../../baseComponents/VLButton'
+import { validate } from './validate'
 import '../../../styles/theme/partnerOnBoarding/aboutYou/inputInformation.css'
 import '../../../styles/theme/common/VLButton.css'
-
-const validate = values => {
-  const errors = {}
-  const requiredFields = ['FirstName', 'LastName', 'EmailAddress']
-  requiredFields.forEach(field => {
-    if (!values[field]) {
-      errors[field] = 'Required'
-    }
-  })
-  if (
-    values.EmailAddress &&
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.EmailAddress)
-  ) {
-    errors.EmailAddress = 'Invalid email address'
-  }
-  return errors
-}
 
 const initialData = [
   { identificationData: 'IDENTIFICATION' },
@@ -89,7 +73,7 @@ class InputInformation extends React.Component {
     this.props.cutomerInputData(updatedInput)
   }
   render() {
-    const { handleSubmit } = { ...this.props };
+    const { handleSubmit, pristine, submitting } = { ...this.props };
     const { alertOpen, popUpContent, componentName, dataToRender } = { ...this.state };
     return (
       <div className='import-information'>
@@ -109,7 +93,7 @@ class InputInformation extends React.Component {
           {componentName === 'address' ? (
             <BackgroundInformation handleClick={this.handleClick} />
           ) : null}
-          <div style={{ margin: '28px 0px', textAlign: 'center' }}>
+          <div className="confirm-button">
             <VLButton title={['confirm', 'Confirm >']} secondary />
           </div>
         </form>

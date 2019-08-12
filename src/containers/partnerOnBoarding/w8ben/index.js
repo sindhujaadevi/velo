@@ -8,7 +8,7 @@ function W8BENRender () {
   return (
     <>
       <Header />
-      <ProgressStep handleNext={2} />
+      <ProgressStep activeStep={2} />
       <W8BEN />
       <Footer />
     </>

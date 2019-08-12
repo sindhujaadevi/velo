@@ -1,14 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-const popupStyles = makeStyles({
+const popUpStyles = makeStyles({
   paper: {
     margin: 30,
     paddingRight: 20,
     // fontFamily: 'NunitoSans',
     position: "relative"
   },
-  dialogTitle: {
+  withTitle: {
     textAlign: "center",
     color: "#677889",
     fontSize: "14px",
@@ -16,29 +16,34 @@ const popupStyles = makeStyles({
     marginRight: "-30px",
     textTransform: 'uppercase',
   },
-  dialogContentText: {
+  withTitleContentText: {
     fontSize: 14,
     lineHeight: "20px",
     color: "#0d1f31"
   },
-  simpleDialog: {
+  commonContentText: {
     fontSize: "20px",
     lineHeight: "28px",
     color: "#0d1f31",
     marginRight: 0
   },
-  actionRoot: {
+  withTitleAction: {
     padding: "24px 0px 24px 15px"
   },
-  simpleRoot: {
+  commonAction: {
     padding: "5px 0px 24px 15px"
   },
-  dialogContent:{
-    padding: "0px 24px 0px"
+  withTitleContent: {
+    padding: "0px 24px 0px",
+    maxHeight: "218px"
   },
-  simpleContent:{
-    padding: "20px 0px 0px 20px"
+  commonContent: {
+    padding: "20px 0px 0px 20px",
+    textAlign: "center"
+  },
+  withTitleTop: {
+    top: '-130px'
   }
 });
 
-export default popupStyles;
+export default popUpStyles;

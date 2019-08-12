@@ -14,8 +14,8 @@ const DEV = {
     fetchCustomerDataFromPartner: `http://dev.onboarding.velobank.com${FETCH_CUSTOMER_DATA_FROM_PARTNER_PATH}`,
 	submitApplication: `http://dev.onboarding.velobank.com${SUBMIT_APPLICATION_DATA_FROM_PARTNER_PATH}`,
 	fetchAemContent: `http://dev.onboarding.velobank.com${FETCH_AEM_CONTENT_PATH}`,
-	fetchw8ben: `https://stage.velobank.com/en/api/tgr/w8-ben.model.json`,
-	fetchTCData: `https://stage.velobank.com/en/api/tgr/terms-and-conditions.model.json`,
+	fetchw8ben: `https://stage.velobank.com/en/api/tgr/w8-ben.model.json`,//
+	fetchTCData: `https://stage.velobank.com/en/api/tgr/terms-and-conditions.model.json`,//
 };
 
 const QA = {
